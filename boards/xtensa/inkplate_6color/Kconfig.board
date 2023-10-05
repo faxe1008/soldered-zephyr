@@ -1,0 +1,12 @@
+# Inkplate 6Color board configuration
+
+# Copyright (c) 2023 Fabian Blatz <fabianblatz@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+config BOARD_INKPLATE_6COLOR
+	bool "Inkplate 6Color Development Board"
+	depends on SOC_SERIES_ESP32
+
+choice SOC_PART_NUMBER
+	default SOC_ESP32_D0WD_V3
+endchoice

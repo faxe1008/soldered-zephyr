@@ -1,0 +1,20 @@
+# Copyright (c) 2023 Fabian Blatz <fabianblatz@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_INKPLATE_6COLOR
+
+config BOARD
+	default "inkplate_6color"
+
+config ENTROPY_GENERATOR
+	default y
+
+config HEAP_MEM_POOL_SIZE
+	default 98304 if WIFI
+	default 65536 if BT
+	default 4096
+
+config KERNEL_MEM_POOL
+	default y
+
+endif # BOARD_INKPLATE_6COLOR

@@ -1,0 +1,24 @@
+# Copyright (c) 2023 Fabian Blatz <fabianblatz@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+identifier: inkplate_6color
+name: Inkplate 6Color
+type: mcu
+arch: xtensa
+toolchain:
+  - zephyr
+supported:
+  - gpio
+  - i2c
+  - spi
+  - watchdog
+  - regulator
+  - uart
+  - pinmux
+  - nvs
+testing:
+  default: true
+  ignore_tags:
+    - net
+    - bluetooth
+vendor: espressif
