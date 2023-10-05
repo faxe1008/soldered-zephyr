@@ -7,6 +7,7 @@
 
 #include <espressif/esp32/esp32_d0wd_v3.dtsi>
 #include "inkplate_6color-pinctrl.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 / {
 	model = "esp32";
@@ -16,6 +17,15 @@
 		uart-0 = &uart0;
 		i2c-0 = &i2c0;
 		watchdog0 = &wdt0;
+	};
+
+	buttons {
+		compatible = "gpio-keys";
+		wakeup_button_0: wakeup_button_0 {
+			gpios = <&gpio 36 (GPIO_ACTIVE_LOW)>;
+			label = "Wakeup Button";
+			zephyr,code = <INPUT_KEY_WAKEUP>;
+		};
 	};
 
 	chosen {
